@@ -1,6 +1,6 @@
 Gem::Specification.new do |gem|
-  gem.authors       = ["Jordan Sissel"]
-  gem.email         = ["jls@semicomplete.com"]
+  gem.authors       = ["Jordan Sissel", "Roi Rav-Hon"]
+  gem.email         = ["jls@semicomplete.com", "roi@logz.io"]
   gem.description   = "lumberjack log transport library"
   gem.summary       = gem.description
   gem.homepage      = "https://github.com/jordansissel/lumberjack"
@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.files = Dir.glob("lib/**/*.rb")
 
   gem.test_files    = Dir.glob("spec/**/*.rb")
-  gem.name          = "jls-lumberjack"
+  gem.name          = "jls-lumberjack-logzio"
   gem.require_paths = ["lib"]
   gem.version       = "0.0.26"
 

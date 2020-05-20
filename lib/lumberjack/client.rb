@@ -82,10 +82,8 @@ module Lumberjack
       if !opts[:ssl]
         @socket = tcp_socket
       else
-        certificate = OpenSSL::X509::Certificate.new(File.read(opts[:ssl_certificate]))
-
         certificate_store = OpenSSL::X509::Store.new
-        certificate_store.add_cert(certificate)
+        certificate_store.add_file(opts[:ssl_certificate])
 
         ssl_context = OpenSSL::SSL::SSLContext.new
         ssl_context.verify_mode = OpenSSL::SSL::VERIFY_PEER
