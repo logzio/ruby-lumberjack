@@ -3,14 +3,14 @@ Gem::Specification.new do |gem|
   gem.email         = ["jls@semicomplete.com", "roi@logz.io"]
   gem.description   = "lumberjack log transport library"
   gem.summary       = gem.description
-  gem.homepage      = "https://github.com/jordansissel/lumberjack"
+  gem.homepage      = "https://github.com/logzio/ruby-lumberjack"
 
   gem.files = Dir.glob("lib/**/*.rb")
 
   gem.test_files    = Dir.glob("spec/**/*.rb")
   gem.name          = "jls-lumberjack-logzio"
   gem.require_paths = ["lib"]
-  gem.version       = "0.0.26"
+  gem.version       = "0.0.29"
 
   gem.add_runtime_dependency "concurrent-ruby"
 

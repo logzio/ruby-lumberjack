@@ -82,8 +82,17 @@ module Lumberjack
       if !opts[:ssl]
         @socket = tcp_socket
       else
+
         certificate_store = OpenSSL::X509::Store.new
-        certificate_store.add_file(opts[:ssl_certificate])
+
+        delimiter = "\n-----END CERTIFICATE-----\n"
+        blob = IO.binread opts[:ssl_certificate]
+        blobs = blob.split(delimiter)
+        blobs.each do |blob|
+          blob += delimiter
+          cert = OpenSSL::X509::Certificate.new blob
+          certificate_store.add_cert(cert)
+        end
 
         ssl_context = OpenSSL::SSL::SSLContext.new
         ssl_context.verify_mode = OpenSSL::SSL::VERIFY_PEER
